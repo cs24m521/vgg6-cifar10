@@ -1,3 +1,7 @@
+import torch
+import torchvision
+import torchvision.transforms as transforms
+
 def get_cifar10_loaders(batch_size=128, shuffle=True):
     transform_train = transforms.Compose([
         transforms.RandomCrop(32, padding=4),
