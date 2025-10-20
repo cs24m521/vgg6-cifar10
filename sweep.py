@@ -14,3 +14,5 @@ sweep_config = {
         'device': {'value': 'cuda' if torch.cuda.is_available() else 'cpu'}
     }
 }
+sweep_id = wandb.sweep(sweep_config, project="vgg6-cifar10-DLA")
+print("Your Sweep ID:", sweep_id)
