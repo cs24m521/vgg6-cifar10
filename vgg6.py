@@ -1,3 +1,5 @@
+
+import torch.nn as nn
 class VGG6(nn.Module):
     def __init__(self, activation_fn=nn.ReLU):
         super(VGG6, self).__init__()
