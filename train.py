@@ -1,3 +1,11 @@
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from tqdm import tqdm
+import wandb
+from model import VGG6
+from data import get_cifar10_loaders
+
 def train_model(config=None):
     with wandb.init(config=config):
         config = wandb.config
