@@ -4,7 +4,7 @@ import argparse
 from train import train_model
 
 if __name__ == "__main__":
-    # --- Parse command-line arguments (for manual runs) ---
+    # command-line arguments (for manual runs) 
     parser = argparse.ArgumentParser(description="VGG6 CIFAR10 W&B Sweep / Manual Runner")
 
     parser.add_argument("--activation", type=str, default="relu")
@@ -25,7 +25,7 @@ if __name__ == "__main__":
     run = wandb.init(project="vgg6-cifar10-DLA", entity="cs24m521-iitm", config=vars(args))
     config = wandb.config
 
-    print(f"🚀 Starting training with config: {dict(config)}")
+    print(f"Starting training with config: {dict(config)}")
 
     # --- Run training ---
     train_model(config)
