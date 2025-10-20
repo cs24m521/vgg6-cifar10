@@ -7,8 +7,8 @@ sweep_config = {
     'method': 'random',
     'metric': {'goal': 'maximize', 'name': 'final_val_acc'},
     'parameters': {
-        'epochs': {'values': [10, 20, 50]},                         # exploring convergence depth
-        'batch_size': {'values': [32, 64, 128, 256, 512]},          # five batch sizes
+        'epochs': {'values': [10, 20, 50]},                         
+        'batch_size': {'values': [32, 64, 128, 256, 512]},          
         'shuffle_batch': {'values': [True, False]},
         'activation': {'values': ['relu', 'gelu', 'silu', 'selu', 'tanh', 'sigmoid']},
         'optimizer': {'values': ['sgd', 'nesterov', 'adam', 'rmsprop', 'nadam', 'adagrad']},
