@@ -3,6 +3,7 @@ from train import train_model
 import torch
 sweep_config = {
     'name': 'VGG6-HyperSweep-Final',
+    'program': 'main.py',
     'method': 'random',
     'metric': {'goal': 'maximize', 'name': 'final_val_acc'},
     'parameters': {
