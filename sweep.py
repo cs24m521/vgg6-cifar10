@@ -1,3 +1,6 @@
+import wandb
+from train import train_model
+import torch
 sweep_config = {
     'name': 'VGG6-HyperSweep-Final',
     'method': 'random',
