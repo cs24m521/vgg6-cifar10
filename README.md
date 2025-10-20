@@ -9,11 +9,15 @@ This repository contains modular code for training and sweeping hyperparameters 
 | `model.py` | VGG6 CNN architecture |
 | `train.py` | Model training with Weights & Biases logging |
 | `sweep.py` | W&B sweep configuration and launcher |
+| `main.py` | sweep launcher |
 | `requirements.txt` | Package dependencies |
 
 ## 🚀 Setup
 ```bash
 python3 -m venv vgg6_env
 source vgg6_env/bin/activate
+git clone https://github.com/cs24m521/vgg6-cifar10.git
+cd vgg6-cifar10
 pip install -r requirements.txt
 wandb login
+python3 sweep.py
