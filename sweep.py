@@ -21,6 +21,6 @@ sweep_config = {
 sweep_id = wandb.sweep(sweep_config,
                        project='vgg6-cifar10-DLA',
                        entity='cs24m521-iitm')
-print(f"Sweep created: cs24m521-iitm/vgg6-cifar10-DLA/{sweep_id}")
+print(f"Sweep created: cs24m521-iitm/vgg6/{sweep_id}")
 print("Run this in the Colab terminal:")
 print(f"nohup wandb agent--count 25 cs24m521-iitm/vgg6-cifar10-DLA/{sweep_id} > sweep_log.txt 2>&1 &")
