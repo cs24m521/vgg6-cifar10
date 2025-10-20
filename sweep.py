@@ -17,5 +17,14 @@ sweep_config = {
         'device': {'value': 'cuda' if torch.cuda.is_available() else 'cpu'}
     }
 }
-sweep_id = wandb.sweep(sweep_config, project="vgg6-cifar10-DLA")
+sweep_id = wandb.sweep(sweep_config, project="vgg6-cifar10-DLA") 
 print("Your Sweep ID:", sweep_id)
+
+wandb.agent(
+    sweep_id,
+    project="vgg6-cifar10-DLA",
+    entity="cs24m521-iitm",
+    function=None,
+    program="main.py",  
+    count=25    
+)
