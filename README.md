@@ -25,7 +25,7 @@ python3 main.py --activation=relu  --optimizer=nesterov --lr=0.01 --momentum=0.9
 
 
 #Model Performance on Different Configurations
-python3 sweep.py
+python3 sweep.py  # Important: Edit sweep.py for the sweep id update and project path as per the wandb login
 
 
 #for best configuration verification
