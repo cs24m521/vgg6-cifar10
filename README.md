@@ -2,7 +2,7 @@
 
 This repository contains modular code for training and sweeping hyperparameters of a custom VGG6 model on CIFAR-10.
 
-## 📦 Files
+## Files
 | File | Description |
 |------|--------------|
 | `data.py` | CIFAR-10 dataset loading utilities |
@@ -12,10 +12,9 @@ This repository contains modular code for training and sweeping hyperparameters 
 | `main.py` | sweep launcher |
 | `requirements.txt` | Package dependencies |
 
-## 🚀 Setup
-```bash
-python3 -m venv vgg6_env
-source vgg6_env/bin/activate
+## Setup
+Run following commands on google colab terminal
+
 git clone https://github.com/cs24m521/vgg6-cifar10.git
 cd vgg6-cifar10
 pip install -r requirements.txt
@@ -26,3 +25,6 @@ python3 main.py --activation=relu  --optimizer=nesterov --lr=0.01 --momentum=0.9
 
 #Model Performance on Different Configurations
 python3 sweep.py
+
+#for best configuration verification
+python3 main.py --activation=gelu  --optimizer=nesterov --lr=0.1 --momentum=0.5 --weight_decay=0.0001 --batch_size=128 --shuffle_batch=True   --epochs=50 --device=cuda
