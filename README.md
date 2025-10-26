@@ -13,7 +13,8 @@ This repository contains modular code for training and sweeping hyperparameters 
 | `requirements.txt` | Package dependencies |
 
 ## Setup
-Run following commands on google colab terminal
+``bash
+#Run following commands on google colab terminal
 
 git clone https://github.com/cs24m521/vgg6-cifar10.git
 cd vgg6-cifar10
@@ -21,10 +22,15 @@ pip install -r requirements.txt
 wandb login
 
 #for baseline configuration
+
 python3 main.py --activation=relu  --optimizer=nesterov --lr=0.01 --momentum=0.9 --weight_decay=0.0001 --batch_size=128 --shuffle_batch=True   --epochs=20 --device=cuda
 
+
 #Model Performance on Different Configurations
+
 python3 sweep.py
 
+
 #for best configuration verification
+
 python3 main.py --activation=gelu  --optimizer=nesterov --lr=0.1 --momentum=0.5 --weight_decay=0.0001 --batch_size=128 --shuffle_batch=True   --epochs=50 --device=cuda
