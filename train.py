@@ -98,6 +98,15 @@ def train_model(config=None):
             val_loss /= len(testloader)
             val_acc = 100 * correct / total
 
+            # Track best model
+            if epoch == 0:
+                best_acc = val_acc  # initialize first time
+
+            if val_acc > best_acc:
+                best_acc = val_acc
+                torch.save(model.state_dict(), "vgg6_best.pth")
+                print(f"Saved best model so far with accuracy: {best_acc:.2f}%")
+                
             # --- Log metrics to W&B ---
             wandb.log({
                 "train_loss": train_loss,
@@ -110,3 +119,6 @@ def train_model(config=None):
 
         wandb.log({"final_val_acc": val_acc})
         print(f"Final Validation Accuracy: {val_acc:.2f}%")
+
+
+
