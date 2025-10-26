@@ -18,7 +18,7 @@ This repository contains modular code for training and sweeping hyperparameters 
 git clone https://github.com/cs24m521/vgg6-cifar10.git
 cd vgg6-cifar10
 pip install -r requirements.txt
-wandb login
+wandb login (#provide API Key when prompted)
 
 #for baseline configuration
 python3 main.py --activation=relu  --optimizer=nesterov --lr=0.01 --momentum=0.9 --weight_decay=0.0001 --batch_size=128 --shuffle_batch=True   --epochs=20 --device=cuda
