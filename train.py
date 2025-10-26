@@ -98,9 +98,9 @@ def train_model(config=None):
             val_loss /= len(testloader)
             val_acc = 100 * correct / total
 
-            # Track best model
+            # ---Track best model---
             if epoch == 0:
-                best_acc = val_acc  # initialize first time
+                best_acc = val_acc  
 
             if val_acc > best_acc:
                 best_acc = val_acc
